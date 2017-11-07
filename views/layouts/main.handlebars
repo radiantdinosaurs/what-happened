@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<!--HEAD-->
+<head>
+    <meta charset="UTF-8"/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <title>{{title}}</title>
+    <!--STYLESHEETS-->
+    <link href="stylesheets/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px|Material+Icons|Roboto:300" rel="stylesheet">
+    <!--END STYLESHEETS-->
+</head>
+<!--END HEAD-->
+
+<!--BODY-->
+<body>
+    <div class="outer">
+        <div class="middle">
+            <!--MAIN CONTENT INNER-->
+            <div class="inner fade">
+                {{{body}}}
+                <br>
+                <br>
+                <!--SEARCH FORM-->
+                <form class="search" method="post" action="/" autocomplete="off">
+                    <input required="required" type="text" id="search-input" name="date" placeholder="MM/DD/YYYY"/>
+                    <button class="delete" type="reset"></button>
+                </form>
+                <!--END SEARCH FORM-->
+            </div>
+            <!--END MAIN CONTENT INNER-->
+        </div>
+    </div>
+</body>
+<!--END BODY-->
+</html>
