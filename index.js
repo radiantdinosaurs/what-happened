@@ -1,28 +1,35 @@
-const port = process.env.PORT || 8000;
 const express = require('express');
-const app = express();
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({ defaultLayout: 'main' });
 const bodyParser = require('body-parser');
 const path = require('path');
 const fetch = require('node-fetch');
 
-app.engine('.hbs', hbs.engine);
-app.set('view engine', '.hbs');
-app.use(express.static(port + '/public'));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.listen(port);
+const app = express();
+const hbs = exphbs.create({ defaultLayout: 'main' });
 
 const API_BASE = (day, month) => `http://numbersapi.com/${day}/${month}/date`
 const PAGE_TITLE = 'What Happened?'
+const PORT = process.env.PORT || 8000;
 
+app.engine('.hbs', hbs.engine);
+app.set('view engine', '.hbs');
+app.use(express.static(PORT + '/public'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.listen(PORT);
+
+/**
+ * Gets `/`, the  index
+ */
 app.get('/', function (request, response) {
     response.render('index', {
         title: PAGE_TITLE
     });
 });
 
+/**
+ * Handles a POST from `/`, which would simply be the user sending a date over
+ */
 app.post('/', function (request, response) {
     const date = request.body.date;
     if (testIsValidInput(date)) {

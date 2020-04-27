@@ -39,11 +39,10 @@
 }
 
 .fade {
-    -webkit-animation: fade 2s linear forwards;
     animation: fade 2s linear forwards;
 }
 
-@-webkit-keyframes fade {
+@keyframes fade {
     0% { opacity: 0; }
     50% { opacity: 1; }
 }
@@ -58,7 +57,6 @@
     width: 300px;
     position: absolute;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 .search input {
@@ -72,12 +70,9 @@
     position: absolute;
     top: 0;
     left: 50%;
-    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     border-radius: 100%;
-    -webkit-transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
     transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
-    -webkit-transition-delay: 0s, 0.4s, 0s;
     transition-delay: 0s, 0.4s, 0s;
     box-shadow: 0 0 0 1px currentColor;
     color: inherit;
@@ -88,7 +83,6 @@
 }
 .search input:focus, .search input:valid {
     width: 100%;
-    -webkit-transition-delay: 0.4s, 0s, 0.4s;
     transition-delay: 0.4s, 0s, 0.4s;
     outline: 0;
     border-radius: 0;
@@ -98,7 +92,6 @@
 .search input:focus + .delete, .search input:valid + .delete {
     pointer-events: all;
     left: calc(100% - 25px);
-    -webkit-transition-delay: 0.4s;
     transition-delay: 0.4s;
 }
 .search input:focus + .delete:focus, .search input:valid + .delete:focus {
@@ -107,22 +100,17 @@
     width: 37.5px;
 }
 .search input:focus + .delete:before, .search input:valid + .delete:before {
-    -webkit-transform: translate(-50%, -50%) rotate(-45deg) scaleY(0.7);
     transform: translate(-50%, -50%) rotate(-45deg) scaleY(0.7);
-    -webkit-transition-delay: 0s;
     transition-delay: 0s;
 }
 .search input:focus + .delete:after, .search input:valid + .delete:after {
-    -webkit-transform: translate(-50%, -50%) rotate(45deg) scaleY(0.7);
     transform: translate(-50%, -50%) rotate(45deg) scaleY(0.7);
-    -webkit-transition-delay: 0.2s;
     transition-delay: 0.2s;
 }
 .search .delete {
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     height: 50px;
     width: 50px;
@@ -131,9 +119,7 @@
     border-radius: 100%;
     border: 0;
     pointer-events: none;
-    -webkit-transition: left 0.4s ease-in-out;
     transition: left 0.4s ease-in-out;
-    -webkit-transition-delay: 0s;
     transition-delay: 0s;
     color: inherit;
     cursor: pointer;
@@ -149,11 +135,8 @@
     background: currentColor;
     width: 1px;
     height: 37.5px;
-    -webkit-transform: translate(32.25px, 32.25px) translate(-50%, -50%) rotate(-45deg) scaleY(1);
     transform: translate(32.25px, 32.25px) translate(-50%, -50%) rotate(-45deg) scaleY(1);
-    -webkit-transition: -webkit-transform 0.2s ease-in-out;
     transition: -webkit-transform 0.2s ease-in-out;
-    -webkit-transition-delay: 0.6s;
     transition-delay: 0.6s;
 }
 .search .delete:after {
@@ -164,30 +147,7 @@
     background: currentColor;
     width: 1px;
     height: 37.5px;
-    -webkit-transform: translate(-50%, -50%) rotate(45deg) scaleY(0);
     transform: translate(-50%, -50%) rotate(45deg) scaleY(0);
-    -webkit-transition: -webkit-transform 0.2s ease-in-out;
     transition: -webkit-transform 0.2s ease-in-out;
-    -webkit-transition-delay: 0.4s;
     transition-delay: 0.4s;
-}
-
-::-webkit-input-placeholder {
-    color: #c8c8c8;
-    font-family: 'Roboto', sans-serif;
-}
-
-::-moz-placeholder {
-    color: #C8C8C8;
-    font-family: 'Roboto', sans-serif;
-}
-
-:-ms-input-placeholder {
-    color: #C8C8C8;
-    font-family: 'Roboto', sans-serif;
-}
-
-:-moz-placeholder {
-    color: #C8C8C8;
-    font-family: 'Roboto', sans-serif;
 }
